@@ -28,22 +28,19 @@ if dein#load_state('/home/anton/.config/nvim/dein/')
   " Let dein manage dein
   " Required:
   call dein#add('/home/anton/.config/nvim/dein//repos/github.com/Shougo/dein.vim')
+  call dein#add('haya14busa/dein-command.vim')
 
-  " Add or remove your plugins here:
-
-  " You can specify revision/branch/tag.
+  " Anton's:
   call dein#add('Shougo/vimshell')
-
   call dein#add('scrooloose/nerdtree', {'on_cmd': 'NERDTreeToggle'})
   call dein#add('Xuyuanp/nerdtree-git-plugin', {'on_cmd': 'NERDTreeToggle'})
-
-  call dein#add('haya14busa/dein-command.vim')
 
   call dein#add('w0rp/ale')
   call dein#add('editorconfig/editorconfig-vim')
 
   call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
   call dein#add('ervandew/supertab')
+
   call dein#add('pangloss/vim-javascript')
   call dein#add('mxw/vim-jsx')
   call dein#add('leshill/vim-json')
@@ -69,6 +66,8 @@ if dein#check_install()
 endif
 
 "End dein Scripts-------------------------
+
+
 map <C-n> :NERDTreeToggle<CR>
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -114,5 +113,5 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " or just disable the preview entirely
 set completeopt-=preview
 
-let g:UltiSnipsSnippetsDirectories=['/home/anton/.config/nvim/dein/repos/github.com/honza/vim-snippets/UltiSnips', '/home/anton/.config/nvim/UltiSnips']
-let g:UltiSnipsSnippetsDir='/home/anton/.config/nvim/UltiSnips'
+let g:UltiSnipsSnippetsDirectories=['~/.config/nvim/dein/repos/github.com/honza/vim-snippets/UltiSnips', '~/.config/nvim/UltiSnips']
+let g:UltiSnipsSnippetsDir='~/.config/nvim/UltiSnips'
