@@ -30,32 +30,29 @@ if dein#load_state('/home/anton/.config/nvim/dein/')
   call dein#add('/home/anton/.config/nvim/dein//repos/github.com/Shougo/dein.vim')
 
   " Add or remove your plugins here:
-  call dein#add('Shougo/neosnippet.vim')
-  call dein#add('Shougo/neosnippet-snippets')
 
   " You can specify revision/branch/tag.
-  call dein#add('Shougo/vimshell', { 'rev': '3787e5' })
+  call dein#add('Shougo/vimshell')
 
   call dein#add('scrooloose/nerdtree', {'on_cmd': 'NERDTreeToggle'})
   call dein#add('Xuyuanp/nerdtree-git-plugin', {'on_cmd': 'NERDTreeToggle'})
 
   call dein#add('haya14busa/dein-command.vim')
-  
-  call dein#add('valloric/YouCompleteMe')
+
   call dein#add('w0rp/ale')
   call dein#add('editorconfig/editorconfig-vim')
 
   call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
-	call dein#add('ervandew/supertab')
+  call dein#add('ervandew/supertab')
   call dein#add('pangloss/vim-javascript')
   call dein#add('mxw/vim-jsx')
-	call dein#add('leshill/vim-json')
+  call dein#add('leshill/vim-json')
 
-	call dein#add( 'SirVer/ultisnips')
-	call dein#add( 'honza/vim-snippets')
-	call dein#add( 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] })
-	call dein#add( 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] })
-	call dein#add( 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] })
+  call dein#add( 'SirVer/ultisnips')
+  call dein#add( 'honza/vim-snippets')
+  call dein#add( 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] })
+  call dein#add( 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] })
+  call dein#add( 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] })
 
   " Required:
   call dein#end()
@@ -117,3 +114,5 @@ let g:SuperTabClosePreviewOnPopupClose = 1
 " or just disable the preview entirely
 set completeopt-=preview
 
+let g:UltiSnipsSnippetsDirectories=['/home/anton/.config/nvim/dein/repos/github.com/honza/vim-snippets/UltiSnips', '/home/anton/.config/nvim/UltiSnips']
+let g:UltiSnipsSnippetsDir='/home/anton/.config/nvim/UltiSnips'

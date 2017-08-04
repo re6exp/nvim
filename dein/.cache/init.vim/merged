@@ -1,2 +1,0 @@
-100
-['/home/anton/.config/nvim/dein//repos/github.com/Shougo/dein.vim', 'Shougo/deoplete.nvim', 'Shougo/neosnippet-snippets', 'Shougo/neosnippet.vim', 'Shougo/vimshell', 'SirVer/ultisnips', 'Xuyuanp/nerdtree-git-plugin', 'carlitux/deoplete-ternjs', 'editorconfig/editorconfig-vim', 'ervandew/supertab', 'haya14busa/dein-command.vim', 'honza/vim-snippets', 'leshill/vim-json', 'mxw/vim-jsx', 'othree/jspc.vim', 'pangloss/vim-javascript', 'scrooloose/nerdtree', 'ternjs/tern_for_vim', 'valloric/YouCompleteMe', 'w0rp/ale']
