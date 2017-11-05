@@ -2,6 +2,7 @@
 " https://www.gregjs.com/vim/2016/neovim-deoplete-jspc-ultisnips-and-tern-a-config-for-kickass-autocompletion/
 " https://javascriptplayground.com/blog/2017/01/vim-for-javascript/
 "
+" Install https://github.com/ryanoasis/nerd-fonts.git before
 set tabstop=2     "tab width
 set shiftwidth=2  "indent size
 set expandtab     "use spaces
@@ -10,7 +11,7 @@ set number
 set ruler
 set splitbelow
 set splitright
-nnoremap ; :
+" nnoremap ; :
 set encoding=utf-8
 
 "dein Scripts-----------------------------
@@ -34,13 +35,21 @@ if dein#load_state('/home/anton/.config/nvim/dein/')
   call dein#add('Shougo/vimshell')
   call dein#add('scrooloose/nerdtree', {'on_cmd': 'NERDTreeToggle'})
   call dein#add('Xuyuanp/nerdtree-git-plugin', {'on_cmd': 'NERDTreeToggle'})
+  call dein#add('vim-airline/vim-airline')
+  call dein#add('vim-airline/vim-airline-themes')
+
+  call dein#add('airblade/vim-gitgutter')
 
   call dein#add('w0rp/ale')
   call dein#add('editorconfig/editorconfig-vim')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('tpope/vim-endwise')
 
   call dein#add('Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' })
   call dein#add('ervandew/supertab')
+  call dein#add('ludovicchabant/vim-gutentags')
 
+  call dein#add('majutsushi/tagbar')
   call dein#add('pangloss/vim-javascript')
   call dein#add('mxw/vim-jsx')
   call dein#add('leshill/vim-json')
@@ -50,6 +59,9 @@ if dein#load_state('/home/anton/.config/nvim/dein/')
   call dein#add( 'ternjs/tern_for_vim', { 'for': ['javascript', 'javascript.jsx'] })
   call dein#add( 'carlitux/deoplete-ternjs', { 'for': ['javascript', 'javascript.jsx'] })
   call dein#add( 'othree/jspc.vim', { 'for': ['javascript', 'javascript.jsx'] })
+
+  call dein#add('ryanoasis/vim-devicons')
+  call dein#add('tiagofumo/vim-nerdtree-syntax-highlight')
 
   " Required:
   call dein#end()
@@ -75,17 +87,17 @@ autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | exe 'NERDTree' argv()[0] | wincmd p | ene | endif
 
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✔︎",
-    \ 'Ignored'   : '☒',
-    \ "Unknown"   : "?"
-    \ }
+      \ "Modified"  : "✹",
+      \ "Staged"    : "✚",
+      \ "Untracked" : "✭",
+      \ "Renamed"   : "➜",
+      \ "Unmerged"  : "═",
+      \ "Deleted"   : "✖",
+      \ "Dirty"     : "✗",
+      \ "Clean"     : "✔",
+      \ 'Ignored'   : '☒',
+      \ "Unknown"   : "?"
+      \ }
 let g:python_host_prog = '/home/anton/.pyenv/shims/python'
 let g:python3_host_prog = '/home/anton/.pyenv/shims/python3'
 
@@ -94,9 +106,9 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#omni#functions = {}
 let g:deoplete#omni#functions.javascript = [
-  \ 'tern#Complete',
-  \ 'jspc#omni'
-\]
+      \ 'tern#Complete',
+      \ 'jspc#omni'
+      \]
 
 set completeopt=longest,menuone,preview
 let g:deoplete#sources = {}
@@ -104,7 +116,7 @@ let g:deoplete#sources['javascript.jsx'] = ['file', 'ultisnips', 'ternjs']
 let g:tern#command = ['tern']
 let g:tern#arguments = ['--persistent']
 
-autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<c-x><c-o>"
+autocmd FileType javascript let g:SuperTabDefaultCompletionType = "<C-X><C-O>"
 let g:UltiSnipsExpandTrigger="<C-j>"
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 
@@ -115,3 +127,11 @@ set completeopt-=preview
 
 let g:UltiSnipsSnippetsDirectories=['~/.config/nvim/dein/repos/github.com/honza/vim-snippets/UltiSnips', '~/.config/nvim/UltiSnips']
 let g:UltiSnipsSnippetsDir='~/.config/nvim/UltiSnips'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|>'
+set guifont=Source\ Code\ Pro\ 11
+
+nmap <F8> :TagbarToggle<CR>
+nmap <F7> mzgg=G`z

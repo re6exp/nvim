@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/anton/Documents/workspace-sts/svetlitsa-netflix/admin'
+let g:netrw_dirhist_2='/home/anton/Documents/workspace-sts/svetlitsa-netflix/admin-sc-js'
+let g:netrw_dirhist_3='/home/anton/Documents/workspace-sts/svetlitsa-netflix/admin-sc-js/server'
+let g:netrw_dirhist_4='/home/anton/.config/nvim/dein'
