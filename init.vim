@@ -40,6 +40,8 @@ if dein#load_state('/home/anton/.config/nvim/dein/')
 
   call dein#add('airblade/vim-gitgutter')
 
+  call dein#add('mbbill/undotree')
+
   call dein#add('w0rp/ale')
   call dein#add('editorconfig/editorconfig-vim')
   call dein#add('tpope/vim-commentary')
@@ -133,5 +135,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|>'
 set guifont=Source\ Code\ Pro\ 11
 
-nmap <F8> :TagbarToggle<CR>
+nnoremap <F5> :UndotreeToggle<cr>
 nmap <F7> mzgg=G`z
+nmap <F8> :TagbarToggle<CR>
+
